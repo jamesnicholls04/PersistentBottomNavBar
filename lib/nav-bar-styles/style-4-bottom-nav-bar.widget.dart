@@ -24,7 +24,7 @@ class BottomNavStyle4 extends StatelessWidget {
       this.backgroundColor,
       this.popScreensOnTapOfSelectedTab,
       this.itemAnimationProperties,
-      this.navBarHeight = 0.0,
+      this.navBarHeight = 0,
       @required this.items,
       this.onItemSelected,
       this.popAllScreensForTheSelectedTab,
@@ -122,82 +122,84 @@ class BottomNavStyle4 extends StatelessWidget {
           right:
               this.padding?.right ?? MediaQuery.of(context).size.width * 0.05,
           bottom: this.padding?.bottom ?? this.navBarHeight * 0.1),
-      child: Row(
-        children: [
-          Expanded(
-            flex: 1,
-            child: Column(
-              children: <Widget>[
-                Row(
-                  //mainAxisSize: MainAxisSize.min,
-                  children: <Widget>[
-                    AnimatedContainer(
-                      duration: itemAnimationProperties?.duration ??
-                          Duration(milliseconds: 300),
-                      curve: itemAnimationProperties?.curve ?? Curves.ease,
-                      color: Colors.transparent,
-                      width: (selectedIndex == 0
-                          ? MediaQuery.of(context).size.width * 0.0
-                          : itemWidth * selectedIndex),
-                      height: 4.0,
-                    ),
-                    Flexible(
-                      child: AnimatedContainer(
+      child: SafeArea(
+        child: Row(
+          children: [
+            Expanded(
+              flex: 1,
+              child: Column(
+                children: <Widget>[
+                  Row(
+                    //mainAxisSize: MainAxisSize.min,
+                    children: <Widget>[
+                      AnimatedContainer(
                         duration: itemAnimationProperties?.duration ??
                             Duration(milliseconds: 300),
                         curve: itemAnimationProperties?.curve ?? Curves.ease,
-                        width: itemWidth,
+                        color: Colors.transparent,
+                        width: (selectedIndex == 0
+                            ? MediaQuery.of(context).size.width * 0.0
+                            : itemWidth * selectedIndex),
                         height: 4.0,
-                        alignment: Alignment.center,
-                        child: Container(
-                          height: 5.0,
-                          // TODO: James here, forced width
-                          width: 23,
-                          decoration: BoxDecoration(
-                            //TODO: James altered colour
-                            color: Color.fromRGBO(0, 255, 0, 1),
-                            borderRadius: BorderRadius.circular(100.0),
+                      ),
+                      Flexible(
+                        child: AnimatedContainer(
+                          duration: itemAnimationProperties?.duration ??
+                              Duration(milliseconds: 300),
+                          curve: itemAnimationProperties?.curve ?? Curves.ease,
+                          width: itemWidth,
+                          height: 4.0,
+                          alignment: Alignment.center,
+                          child: Container(
+                            height: 5.0,
+                            // TODO: James here, forced width
+                            width: 23,
+                            decoration: BoxDecoration(
+                              //TODO: James altered colour
+                              color: Color.fromRGBO(0, 255, 0, 1),
+                              borderRadius: BorderRadius.circular(100.0),
+                            ),
                           ),
                         ),
                       ),
-                    ),
-                  ],
-                ),
-                Expanded(
-                  child: Padding(
-                    padding: const EdgeInsets.only(top: 5.0),
-                    child: Row(
-                      children: items.map((item) {
-                        var index = items.indexOf(item);
-                        return Flexible(
-                          child: GestureDetector(
-                            onTap: () {
-                              if (this.items[index].onPressed != null) {
-                                this.items[index].onPressed();
-                              } else {
-                                if (this.popScreensOnTapOfSelectedTab &&
-                                    this.previousIndex == index) {
-                                  this.popAllScreensForTheSelectedTab(index);
+                    ],
+                  ),
+                  Expanded(
+                    child: Padding(
+                      padding: const EdgeInsets.only(top: 10.0),
+                      child: Row(
+                        children: items.map((item) {
+                          var index = items.indexOf(item);
+                          return Flexible(
+                            child: GestureDetector(
+                              onTap: () {
+                                if (this.items[index].onPressed != null) {
+                                  this.items[index].onPressed();
+                                } else {
+                                  if (this.popScreensOnTapOfSelectedTab &&
+                                      this.previousIndex == index) {
+                                    this.popAllScreensForTheSelectedTab(index);
+                                  }
+                                  this.onItemSelected(index);
                                 }
-                                this.onItemSelected(index);
-                              }
-                            },
-                            child: Container(
-                              color: Colors.transparent,
-                              child: _buildItem(item, selectedIndex == index,
-                                  this.navBarHeight),
+                              },
+                              child: Container(
+                                color: Colors.transparent,
+                                child: _buildItem(item, selectedIndex == index,
+                                    this.navBarHeight),
+                              ),
                             ),
-                          ),
-                        );
-                      }).toList(),
+                          );
+                        }).toList(),
+                      ),
                     ),
                   ),
-                ),
-              ],
+                ],
+              ),
             ),
-          ),
-          trailingWidget ?? Container()
-        ],
+            trailingWidget ?? Container()
+          ],
+        ),
       ),
     );
   }
