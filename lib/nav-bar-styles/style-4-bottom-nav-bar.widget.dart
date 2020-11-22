@@ -182,7 +182,7 @@ class BottomNavStyle4 extends StatelessWidget {
                             }
                           },
                           child: Container(
-                            color: Colors.orange,
+                            color: Colors.transparent,
                             child: _buildItem(item, selectedIndex == index,
                                 this.navBarHeight),
                           ),
