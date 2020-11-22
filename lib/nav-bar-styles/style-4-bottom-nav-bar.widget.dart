@@ -122,11 +122,11 @@ class BottomNavStyle4 extends StatelessWidget {
           right:
               this.padding?.right ?? MediaQuery.of(context).size.width * 0.05,
           bottom: this.padding?.bottom ?? this.navBarHeight * 0.1),
-      child: SafeArea(
-        child: Row(
-          children: [
-            Expanded(
-              flex: 1,
+      child: Row(
+        children: [
+          Expanded(
+            flex: 1,
+            child: SafeArea(
               child: Column(
                 children: <Widget>[
                   Row(
@@ -197,9 +197,9 @@ class BottomNavStyle4 extends StatelessWidget {
                 ],
               ),
             ),
-            trailingWidget ?? Container()
-          ],
-        ),
+          ),
+          trailingWidget ?? Container()
+        ],
       ),
     );
   }

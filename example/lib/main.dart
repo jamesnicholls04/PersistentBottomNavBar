@@ -29,6 +29,11 @@ class HomeScreen extends StatelessWidget {
             resizeToAvoidBottomInset: false,
             resizeToAvoidBottomPadding: true,
             bottomNavigationBar: BottomNavStyle4(
+                trailingWidget: Container(
+                  color: Colors.blue,
+                  height: 60,
+                  width: 60,
+                ),
                 popScreensOnTapOfSelectedTab: false,
                 selectedIndex: 0,
                 previousIndex: 0,
