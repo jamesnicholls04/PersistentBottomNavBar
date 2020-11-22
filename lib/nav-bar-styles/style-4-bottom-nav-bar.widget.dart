@@ -52,7 +52,7 @@ class BottomNavStyle4 extends StatelessWidget {
                 // crossAxisAlignment: CrossAxisAlignment.end,
                 children: <Widget>[
                   Padding(
-                    padding: const EdgeInsets.only(top: 15.0),
+                    padding: const EdgeInsets.only(top: 12.0),
                     child: IconTheme(
                       data: IconThemeData(
                           size: iconSize,
