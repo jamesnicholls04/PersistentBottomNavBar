@@ -103,7 +103,16 @@ class BottomNavStyle4 extends StatelessWidget {
     double itemWidth = 80;
 
     return Container(
-      color: backgroundColor,
+      decoration: BoxDecoration(
+          color: backgroundColor,
+          boxShadow: [
+            BoxShadow(
+                offset: Offset(0, 0),
+                color: Theme.of(context).splashColor,
+                blurRadius: 5.0,
+                spreadRadius: -1),
+          ],
+          borderRadius: BorderRadius.only(topLeft: Radius.circular(40), topRight: Radius.circular(40),),
       width: double.infinity,
       height: this.navBarHeight,
       padding: EdgeInsets.only(
