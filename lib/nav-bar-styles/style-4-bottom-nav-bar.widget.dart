@@ -103,6 +103,7 @@ class BottomNavStyle4 extends StatelessWidget {
     double itemWidth = 80;
 
     return Container(
+      color: backgroundColor,
       width: double.infinity,
       height: this.navBarHeight,
       padding: EdgeInsets.only(
