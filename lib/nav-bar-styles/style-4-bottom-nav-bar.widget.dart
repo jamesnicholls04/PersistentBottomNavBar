@@ -4,7 +4,6 @@ class BottomNavStyle4 extends StatelessWidget {
   final int selectedIndex;
   final int previousIndex;
   final double iconSize;
-  final Color backgroundColor;
   final bool showElevation;
   final List<PersistentBottomNavBarItem> items;
   final ValueChanged<int> onItemSelected;
@@ -21,7 +20,6 @@ class BottomNavStyle4 extends StatelessWidget {
       this.previousIndex,
       this.showElevation = false,
       this.iconSize,
-      this.backgroundColor,
       this.popScreensOnTapOfSelectedTab,
       this.itemAnimationProperties,
       this.navBarHeight = 0,
@@ -105,7 +103,14 @@ class BottomNavStyle4 extends StatelessWidget {
 
     return Container(
       decoration: BoxDecoration(
-          color: backgroundColor,
+          gradient: LinearGradient(
+            begin: Alignment.topCenter,
+            end: Alignment.bottomCenter,
+            colors: [
+              Theme.of(context).cardColor,
+              Theme.of(context).backgroundColor
+            ],
+          ),
           boxShadow: [
             BoxShadow(
                 offset: Offset(0, 0),
