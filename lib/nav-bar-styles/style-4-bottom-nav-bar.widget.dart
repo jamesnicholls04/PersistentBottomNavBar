@@ -112,7 +112,8 @@ class BottomNavStyle4 extends StatelessWidget {
                 blurRadius: 5.0,
                 spreadRadius: -1),
           ],
-          borderRadius: BorderRadius.only(topLeft: Radius.circular(40), topRight: Radius.circular(40),),
+          borderRadius: BorderRadius.only(
+              topLeft: Radius.circular(40), topRight: Radius.circular(40))),
       width: double.infinity,
       height: this.navBarHeight,
       padding: EdgeInsets.only(
