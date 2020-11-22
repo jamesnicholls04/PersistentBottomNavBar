@@ -29,11 +29,7 @@ class HomeScreen extends StatelessWidget {
             resizeToAvoidBottomInset: false,
             resizeToAvoidBottomPadding: true,
             bottomNavigationBar: BottomNavStyle4(
-                trailingWidget: Container(
-                  color: Colors.blue,
-                  height: 60,
-                  width: 60,
-                ),
+                trailingWidget: AddSetButton(),
                 popScreensOnTapOfSelectedTab: false,
                 selectedIndex: 0,
                 previousIndex: 0,
@@ -61,5 +57,45 @@ class HomeScreen extends StatelessWidget {
                   ),
                 ]),
             body: Container()));
+  }
+}
+
+class AddSetButton extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return Padding(
+      padding: const EdgeInsets.only(top: 0.0),
+      child: SizedBox(
+        height: 45,
+        width: 45,
+        child: FloatingActionButton(
+          child: Container(
+            height: 45,
+            width: 45,
+            //padding: EdgeInsets.all(0),
+            decoration: BoxDecoration(
+              shape: BoxShape.circle,
+              color: Color.fromRGBO(0, 255, 0, 1),
+            ),
+            child: Icon(
+              Icons.add,
+              //const IconDataSolid(61543),
+              size: 16,
+              color: Colors.black,
+            ),
+          ),
+          onPressed: () {
+            //HapticFeedback.selectionClick();
+            // showModalBottomSheet<void>(
+            //   isScrollControlled: true,
+            //   context: context,
+            //   builder: (BuildContext context) {
+            //     return AddSetModal();
+            //   },
+            // );
+          },
+        ),
+      ),
+    );
   }
 }
