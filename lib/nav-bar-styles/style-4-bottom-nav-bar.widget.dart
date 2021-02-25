@@ -105,20 +105,13 @@ class BottomNavStyle4 extends StatelessWidget {
 
     return Container(
       decoration: BoxDecoration(
-          gradient: LinearGradient(
-            begin: Alignment.topCenter,
-            end: Alignment.bottomCenter,
-            colors: [
-              Theme.of(context).cardColor,
-              Theme.of(context).backgroundColor
-            ],
-          ),
+          color: backgroundColor,
           boxShadow: [
             BoxShadow(
                 offset: Offset(0, 0),
                 color: Theme.of(context).splashColor,
                 blurRadius: 5.0,
-                spreadRadius: -1),
+                spreadRadius: 0),
           ],
           borderRadius: BorderRadius.only(
               topLeft: Radius.circular(40), topRight: Radius.circular(40))),
