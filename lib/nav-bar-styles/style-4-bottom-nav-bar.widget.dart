@@ -5,6 +5,7 @@ class BottomNavStyle4 extends StatelessWidget {
   final int previousIndex;
   final double iconSize;
   final Color backgroundColor;
+  final double borderRadius;
   final bool showElevation;
   final List<PersistentBottomNavBarItem> items;
   final ValueChanged<int> onItemSelected;
@@ -114,7 +115,8 @@ class BottomNavStyle4 extends StatelessWidget {
                 spreadRadius: 0),
           ],
           borderRadius: BorderRadius.only(
-              topLeft: Radius.circular(40), topRight: Radius.circular(40))),
+              topLeft: Radius.circular(borderRadius),
+              topRight: Radius.circular(borderRadius))),
       width: double.infinity,
       height: this.navBarHeight,
       padding: EdgeInsets.only(
