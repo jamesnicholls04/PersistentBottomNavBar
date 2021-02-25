@@ -23,6 +23,7 @@ class BottomNavStyle4 extends StatelessWidget {
       this.showElevation = false,
       this.iconSize,
       this.backgroundColor,
+      this.borderRadius = 20,
       this.popScreensOnTapOfSelectedTab,
       this.itemAnimationProperties,
       this.navBarHeight = 0,
