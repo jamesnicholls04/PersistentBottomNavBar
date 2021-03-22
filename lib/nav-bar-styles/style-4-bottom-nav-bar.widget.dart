@@ -15,6 +15,7 @@ class BottomNavStyle4 extends StatelessWidget {
   final bool popScreensOnTapOfSelectedTab;
   final ItemAnimationProperties itemAnimationProperties;
   final Widget trailingWidget;
+  final BoxShadow shadow;
 
   const BottomNavStyle4(
       {Key key,
@@ -31,6 +32,7 @@ class BottomNavStyle4 extends StatelessWidget {
       this.onItemSelected,
       this.popAllScreensForTheSelectedTab,
       this.padding,
+      @required this.shadow,
       this.trailingWidget});
 
   Widget _buildItem(
@@ -108,13 +110,7 @@ class BottomNavStyle4 extends StatelessWidget {
     return Container(
       decoration: BoxDecoration(
           color: backgroundColor,
-          boxShadow: [
-            BoxShadow(
-                offset: Offset(0, 0),
-                color: Theme.of(context).splashColor,
-                blurRadius: 5.0,
-                spreadRadius: 0),
-          ],
+          boxShadow: [shadow],
           borderRadius: BorderRadius.only(
               topLeft: Radius.circular(borderRadius),
               topRight: Radius.circular(borderRadius))),
