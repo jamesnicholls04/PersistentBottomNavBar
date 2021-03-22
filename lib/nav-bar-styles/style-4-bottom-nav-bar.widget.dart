@@ -156,7 +156,10 @@ class BottomNavStyle4 extends StatelessWidget {
                           decoration: BoxDecoration(
                             //TODO: James altered colour
                             color: Color.fromRGBO(0, 255, 0, 1),
-                            borderRadius: BorderRadius.circular(100.0),
+                            borderRadius: BorderRadius.only(
+                              bottomLeft: Radius.circular(4),
+                              bottomRight: Radius.circular(4),
+                            ),
                           ),
                         ),
                       ),
