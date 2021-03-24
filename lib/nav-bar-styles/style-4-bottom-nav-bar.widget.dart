@@ -105,7 +105,7 @@ class BottomNavStyle4 extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    double itemWidth = 90;
+    double itemWidth = 70;
 
     return Container(
       decoration: BoxDecoration(
