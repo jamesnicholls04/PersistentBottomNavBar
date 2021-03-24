@@ -40,7 +40,7 @@ class BottomNavStyle4 extends StatelessWidget {
     return this.navBarHeight == 0
         ? SizedBox.shrink()
         : AnimatedContainer(
-            width: 90.0,
+            width: 70.0,
             height: navBarHeight,
             duration: itemAnimationProperties?.duration ??
                 Duration(milliseconds: 1000),
